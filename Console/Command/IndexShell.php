@@ -43,6 +43,21 @@ class IndexShell extends AppShell {
 	 *
 	 */
 
+	public function main( ) {
+
+		$this->out( 'Basic usage:' );
+		$this->out( 'create -m Model' );
+		$this->out( 'delete -m Model' );
+		$this->out( 'build -m Model' );
+		$this->out( 'rebuild -m Model' );
+	}
+
+
+
+	/**
+	 *
+	 */
+
 	public function create( ) {
 
 		$alias = $this->params['model'];
@@ -75,7 +90,7 @@ class IndexShell extends AppShell {
 	 *		it will never be null.
 	 */
 
-	public function main( ) {
+	public function build( ) {
 
 		$alias = $this->params['model'];
 		$start = $this->params['start'];
