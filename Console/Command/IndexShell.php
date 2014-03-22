@@ -106,4 +106,17 @@ class IndexShell extends AppShell {
 
 		} while ( count( $records ) === $block );
 	}
+
+
+
+	/**
+	 *
+	 */
+
+	public function rebuild( ) {
+
+		$this->delete( );
+		$this->create( );
+		$this->build( );
+	}
 }
