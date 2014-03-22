@@ -93,7 +93,8 @@ class IndexShell extends AppShell {
 			$records = $Model->find( 'all', [
 				'offset' => $start,
 				'limit' => $block,
-				'order' => "$alias.id"
+				'order' => "$alias.id",
+				'callbacks' => false
 			]);
 
 			$this->out( $start . '-' . ( $start + count( $records )));
