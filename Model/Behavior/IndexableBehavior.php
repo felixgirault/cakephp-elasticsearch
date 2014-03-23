@@ -95,10 +95,12 @@ class IndexableBehavior extends ModelBehavior {
 
 	public function index( Model $Model, $data ) {
 
+		$a = $Model->alias;
+
 		if ( is_numeric( $data )) {
 			$data = $Model->find( 'first', [
 				'conditions' => [
-					$Model->primaryKey => $data
+					$a . '.' . $Model->primaryKey => $data
 				],
 				'callbacks' => false
 			]);
@@ -108,7 +110,6 @@ class IndexableBehavior extends ModelBehavior {
 			throw new Exception( );
 		}
 
-		$a = $Model->alias;
 		$params = [ ];
 
 		foreach ( $this->settings[ $a ]['fields'] as $field ) {
