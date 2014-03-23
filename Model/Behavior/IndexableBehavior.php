@@ -96,7 +96,12 @@ class IndexableBehavior extends ModelBehavior {
 	public function index( Model $Model, $data ) {
 
 		if ( is_numeric( $data )) {
-			$data = $Model->findById( $data );
+			$data = $Model->find( 'first', [
+				'conditions' => [
+					$Model->primaryKey => $data
+				],
+				'callbacks' => false
+			]);
 		}
 
 		if ( empty( $data )) {
