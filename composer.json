@@ -2,7 +2,7 @@
 	"name": "fg/cakephp-elasticsearch",
 	"type": "cakephp-plugin",
 	"description": "A plugin to use the Elasticsearch client in a CakePHP 2 project.",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"authors": [{
 		"name": "Félix Girault",
 		"email": "felix.girault@gmail.com",
